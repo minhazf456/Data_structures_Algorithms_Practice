@@ -60,6 +60,8 @@ class LinkedList {
     this.head = this.head.next;
   }
 
+
+  // remove last node
   removeLast() {
     if (!this.head) {
       return;
