@@ -14,4 +14,21 @@
 
 function circular(list) {}
 
+let slow = list.getFirst();
+let fast = list.getFirst();
+
+// while fast.nect and fast.next.next is defined then will strat iterating through loops
+
+while (fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+
+// when they looking at the same object
+
+if (slow === fast) {
+return true;
+
+}
+}
+
 module.exports = circular;
