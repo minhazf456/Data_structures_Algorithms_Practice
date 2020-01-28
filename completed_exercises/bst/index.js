@@ -19,11 +19,14 @@ class Node {
     this.right = null;
   }
 
-  insert(data) {
-    if (data < this.data && this.left) {
+  insert(data) { // some amount of data to insert our tree
+    if (data < this.data && this.left) { // if the incoming data value is less then this data and there is already something
+// assigned out to left property then I don't want to do anything else with this
       this.left.insert(data);
-    } else if (data < this.data) {
+    } else if (data < this.data) { // 2nd case to check if there is no node to left side it will create node 
       this.left = new Node(data);
+  // 3rd case along the right hand side we want to see if a node already exists there.
+// If it does we'll pass this new value off to the insert method. On that note.  Otherwise we will create a new node and assign it to the right property.
     } else if (data > this.data && this.right) {
       this.right.insert(data);
     } else if (data > this.data) {
@@ -32,7 +35,7 @@ class Node {
   }
 
   contains(data) {
-    if (this.data === data) {
+    if (this.data === data) { // 
       return this;
     }
 

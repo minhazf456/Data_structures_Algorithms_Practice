@@ -11,6 +11,25 @@
 // class.  Contains should accept a 'data' argument
 // and return the Node in the tree with the same value.
 
-class Node {}
+class Node {
+
+
+
+
+    contains(data){
+        if (this.data ===data){
+            return this;
+        }
+
+        if (this.data < data && this.right){
+            return this.right.contains(data);
+        }
+        elseif (this.data > data && this.left){
+            return this.left.contains(data);
+        }
+        return null;
+}
 
 module.exports = Node;
+
+
