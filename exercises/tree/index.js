@@ -21,8 +21,42 @@ class Node {
     add(data) {
         this.children.push(new Node(data) );
     }
-}
 
-class Tree {}
+    /// to remove data we can use array helper function
+    remove(data){
+
+        this.children = this.children.filter(node => {
+            return node.data !== data;
+        })
+    }
+}
+// when we first create tree, this gonna have empty root properties.
+class Tree {
+    constructor () {
+        this.root = null;
+    }
+
+    traverseBF(fn) {
+        const arr = [this.root];
+        while (arr.length) {
+          const node = arr.shift();
+    
+          arr.push(...node.children);
+          fn(node);
+        }
+      }
+
+      traveraseDF(fn) {
+          const arr = [this.root];
+          while (arr.length) {
+              const node = arr.shift();
+
+              arr.unshift(...node.children);
+              fn(node);
+
+          }
+      }
+
+}
 
 module.exports = { Tree, Node };
