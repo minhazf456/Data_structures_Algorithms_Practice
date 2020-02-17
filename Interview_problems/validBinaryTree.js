@@ -25,8 +25,7 @@ nodeAndBoundsStack.push({
     lowerBound: Number.NEGATIVE_INFINITY,
     upperBound: Number.POSITIVE_INFINITY,
   });
-
-//   depth-first Traversal
+// depth-first traversal
   while (nodeAndBoundsStack.length) {
     const { node, lowerBound, upperBound } = nodeAndBoundsStack.pop();
 
@@ -61,6 +60,9 @@ nodeAndBoundsStack.push({
   return true;
 }
 
+
+// Complexity
+// O(n)O(n) time and O(n)O(n) space.
 
 
 
