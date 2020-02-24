@@ -7,7 +7,6 @@ function reverseWords(message) {
     reverseCharacters(message, 0, message.length-1);
 
     // this gives us the right word order but with each word backword
-
     // now we will make the words forward again by reversing each word's character
 
     // we hold the index of the start of the current wotd as we look for end of the current word
@@ -27,3 +26,17 @@ function reverseWords(message) {
         }
     }
 }
+
+function reverseCharacters(message, leftIndex, rightIndex) {
+
+    // Walk towards the middle, from both sides
+    while (leftIndex < rightIndex) {
+  
+      // Swap the left char and right char
+      const temp = message[leftIndex];
+      message[leftIndex] = message[rightIndex];
+      message[rightIndex] = temp;
+      leftIndex++;
+      rightIndex--;
+    }
+  }
