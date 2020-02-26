@@ -26,4 +26,4 @@ class QueueTwoStacks {
         }
     }
 
-    // We can get O(m)O(m) runtime for mm calls. Crazy, right?
+    // We can get O(m)  runtime for m calls. Crazy, right?
