@@ -19,4 +19,4 @@ function getClosingParen(sentence, OpeningParenIndex){
     throw new Error("No closeing :(");
 }
  
-Complexity --- O(n), Space -O(n)
+// Complexity --- O(n), Space -O(n)
