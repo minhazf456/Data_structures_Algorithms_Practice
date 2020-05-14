@@ -44,3 +44,40 @@ while(currrentNode.next){
  return currrentNode;
 
 }
+
+
+/// SecondApproach
+
+function kthTTheLastNode (k, head){
+    if (k < 1) {
+        throw new Error(`Impossible to find less than first to last node: ${k}`);
+      }
+    
+      let leftnode = head;
+      let rightnode = head;
+      // move right node tio the kth node
+
+      for (let i =0; i < k-1; i ++){
+        // But along the way, if a rightNode doesn't have a next,
+    // then k is greater than the length of the list and there
+    // can't be a kth-to-last node! we'll raise an error
+
+    if (!rightnode.next){
+        throw new Error(`k is larger than the length of the linked list: ${k}`);
+    }
+
+    rightnode = rightnode.next;
+      }
+  // Starting with leftNode on the head,
+  // move leftNode and rightNode down the list,
+  // maintaining a distance of k between them,
+  // until rightNode hits the end of the list
+    
+  while(rightnode.next){
+      leftnode = leftnode.next;
+      rightnode = rightnode.next;
+
+  }
+  return leftnode;
+
+}
